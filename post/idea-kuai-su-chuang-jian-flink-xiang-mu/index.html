@@ -1,0 +1,229 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>idea快速创建flink项目 | wingkin的博客</title>
+
+<link rel="shortcut icon" href="https://wingkin45.github.io/favicon.ico?v=1632903486169">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wingkin45.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            wingkin的博客
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1632903486169"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    idea快速创建flink项目
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-09-07 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <p>本文将介绍如何使用idea快速创建flink项目。</p>
+<!-- more -->
+<p>1.flink官网查看flink版本<br>
+<a href="https://flink.apache.org/zh/downloads.html">https://flink.apache.org/zh/downloads.html</a><br>
+<img src="https://img-blog.csdnimg.cn/20210618173354404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>2.idea创建一个新的项目，选择Maven项目，并选择&quot;Create from archetype&quot;，由于没有Flink的archetype，所以需要自己添加。这里version选择从flink官网查看到的flink版本。</p>
+<pre><code class="language-java">org.apache.flink
+flink-quickstart-java
+1.12.4或者1.13.1
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://img-blog.csdnimg.cn/20210618173521839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>3.选择对应的archetype<br>
+<img src="https://img-blog.csdnimg.cn/20210618173552246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"><br>
+<img src="https://img-blog.csdnimg.cn/20210618173608950.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"><br>
+指定项目的Maven配置，也可使用默认的配置。然后点击Finish<br>
+<img src="https://img-blog.csdnimg.cn/20210618173630890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>等待片刻，Maven会自动构建项目<br>
+<img src="https://img-blog.csdnimg.cn/20210618173712964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>接下来运行一个简单的wordCounts例子。<br>
+打开BatchJob类，编辑代码如下：</p>
+<pre><code class="language-java">import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.java.DataSet;
+import org.apache.flink.api.java.ExecutionEnvironment;
+import org.apache.flink.api.java.tuple.Tuple2;
+import org.apache.flink.util.Collector;
+
+
+public class BatchJob {
+
+   public static void main(String[] args) throws Exception {
+      // set up the batch execution environment
+      final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
+
+      //通过字符串构建数据集
+      DataSet&lt;String&gt; text = env.fromElements(
+            &quot;风急天高猿啸哀，渚清沙白鸟飞回。&quot; +
+                  &quot;无边落木萧萧下，不尽长江滚滚来。&quot; +
+                  &quot;万里悲秋常作客，百年多病独登台。&quot; +
+                  &quot;艰难苦恨繁霜鬓，潦倒新停浊酒杯。&quot;);
+      // 分割字符串、按照key进行分组、统计相同的key个数
+      DataSet&lt;Tuple2&lt;String, Integer&gt;&gt; wordCounts = text
+            .flatMap(new LineSplitter())
+            .groupBy(0)
+            .sum(1);
+      // 打印
+      wordCounts.print();
+   }
+
+   // 分割字符串的方法
+   public static class LineSplitter implements FlatMapFunction&lt;String, Tuple2&lt;String, Integer&gt;&gt; {
+      @Override
+      public void flatMap(String line, Collector&lt;Tuple2&lt;String, Integer&gt;&gt; out) {
+         for (String word : line.split(&quot;&quot;)) {
+            out.collect(new Tuple2&lt;String, Integer&gt;(word, 1));
+         }
+      }
+   }
+
+}
+</code></pre>
+<p>接着注释掉pom文件下图中的<code>&lt;scope&gt;provided&lt;/scope</code>，然后Load Maven Changes<br>
+<code>&lt;scope&gt;provided&lt;/scope&gt;</code>表示被依赖项目参与当前项目的编译和测试阶段，但不会参与运行阶段，如果不注释掉，本地运行会报ClassNotFoundException异常<br>
+<img src="https://img-blog.csdnimg.cn/20210618173813292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"></p>
+<p>运行BatchJob：<br>
+<img src="https://img-blog.csdnimg.cn/20210618173824908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1dpbmdfa2luNjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" loading="lazy"><br>
+至此，一个flink项目搭建完成。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">热巴老公的博客</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
